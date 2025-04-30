@@ -1,13 +1,24 @@
-import { useState } from 'react'
-
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Homepage from './components/Homepage';
+import About from './components/About';
+import Footer from './components/Footer';
+// import Contact from './components/Contact';
+import Stories from './components/Stories';
+import Celebrations from './components/Celebrations';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className='w-screen h-[50vh] bg-black text-white'><h1>Hello World</h1></div>
-  )
+    <div className="w-screen h-auto">
+      <Navbar />
+      <Homepage/>
+      <About/>
+      <Stories/>
+      <Celebrations/>
+      {/* <Contact/> */}
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
