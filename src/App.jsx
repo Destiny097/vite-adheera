@@ -3,19 +3,19 @@ import Navbar from './components/Navbar';
 import Homepage from './components/Homepage';
 import About from './components/About';
 import Footer from './components/Footer';
-// import Contact from './components/Contact';
+import Contact from './components/Contact';
 import Stories from './components/Stories';
 import Celebrations from './components/Celebrations';
 
 function App() {
   return (
-    <div className="w-screen h-auto">
+    <div className="">
       <Navbar />
       <Homepage/>
       <About/>
       <Stories/>
       <Celebrations/>
-      {/* <Contact/> */}
+      <Contact/>
       <Footer />
     </div>
   );
