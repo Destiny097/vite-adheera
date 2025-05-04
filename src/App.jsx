@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Contact from './components/Contact';
 import Stories from './components/Stories';
 import Celebrations from './components/Celebrations';
-
+import EventsCarousol from './components/EventsCarousol';
 function App() {
   return (
     <div className="">
@@ -14,9 +14,12 @@ function App() {
       <Homepage/>
       <About/>
       <Stories/>
+      <EventsCarousol/>
       <Celebrations/>
       <Contact/>
       <Footer />
+      
+      
     </div>
   );
 }
