@@ -45,7 +45,7 @@ function Footer() {
         
         <div className='flex flex-col gap-2 lg:w-[20%]'>
           <h3 className='text-amber-300 text-2xl font-bold'>GET IN TOUCH</h3>
-          <p className='text-[18px]'>+91 7019345052</p>
+          <p className='text-[18px]'>+91 89713 09466</p>
           <p className='text-[18px]'>adheerauandi@gmail.com</p>
         </div>
       </div>

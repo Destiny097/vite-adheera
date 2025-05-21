@@ -7,19 +7,20 @@ import Contact from './components/Contact';
 import Stories from './components/Stories';
 import Celebrations from './components/Celebrations';
 import EventsCarousol from './components/EventsCarousol';
+import Experiences from './components/Experience';
+
 function App() {
   return (
-    <div className="">
+    <div>
       <Navbar />
       <Homepage/>
       <About/>
       <Stories/>
       <EventsCarousol/>
+      <Experiences/>
       <Celebrations/>
       <Contact/>
       <Footer />
-      
-      
     </div>
   );
 }

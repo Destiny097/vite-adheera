@@ -15,7 +15,7 @@ function Stories() {
   ];
 
   return (
-    <div className='w-full h-fit bg-black flex flex-col items-center justify-center px-2 py-4'>
+    <div id='Stories' className='w-full h-fit bg-black flex flex-col items-center justify-center px-2 py-4'>
       <div className='w-full h-full flex flex-col items-center justify-between'>
 
         <div className='w-full bg-[#ff3b6d] text-center flex items-center justify-center py-4 px-4'>

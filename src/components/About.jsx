@@ -2,7 +2,7 @@ import React from 'react';
 
 function About() {
   return (
-    <div className="w-full min-h-[50vh] md:min-h-[70vh] bg-black flex flex-col items-center justify-center px-4 py-10">
+    <div id='About' className="w-full min-h-[50vh] md:min-h-[70vh] bg-black flex flex-col items-center justify-center px-4 py-10">
       <div className="w-full md:w-[60%] lg:w-[50%] text-center flex flex-col items-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-white pb-6">
           What is Adheera?

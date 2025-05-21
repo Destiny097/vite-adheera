@@ -6,7 +6,7 @@ const EventsCarousol = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <div className='w-full bg-[#ffda18] flex flex-col items-center justify-center'>
+    <div id='Events' className='w-full bg-[#ffda18] flex flex-col items-center justify-center'>
       <div className='w-full h-full'>
         <div className='w-full bg-purple-700 text-white text-center flex items-center justify-center py-4'>
           <h2 className='text-2xl md:text-4xl font-bold px-2'>

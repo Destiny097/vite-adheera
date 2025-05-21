@@ -11,7 +11,7 @@ import img4 from '../assets/img4.png'
 import img5 from '../assets/img5.png'
 function Homepage() {
   return (
-    <div className='w-[100%] pt-20 h-[50vh] md:h-[80vh] overflow-x-hidden '>
+    <div id='Home' className='w-[100%] pt-20 h-[50vh] md:h-[80vh] overflow-x-hidden '>
       <Swiper
         modules={[Autoplay]}
         spaceBetween={0}

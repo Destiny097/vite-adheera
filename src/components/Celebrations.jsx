@@ -24,7 +24,7 @@ function Celebrations() {
   };
 
   return (
-    <div className='w-full min-h-screen bg-[#2d2d2d] flex items-center justify-center py-8 md:py-0'>
+    <div id='Celebrations' className='w-full min-h-screen bg-[#2d2d2d] flex items-center justify-center py-8 md:py-0'>
       <div className='w-full md:w-[90%] lg:w-[80%] xl:w-[60%] h-auto md:h-[90vh] flex flex-col items-start justify-evenly relative p-4 md:p-6 lg:p-8'>
         <h2 className='text-left font-bold text-xl sm:text-2xl text-white mb-4 md:mb-0'>
           Not a fan of reading? Then see it in action!
