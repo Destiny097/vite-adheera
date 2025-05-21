@@ -35,7 +35,7 @@ const Navbar = () => {
           className="flex items-center gap-2 cursor-pointer ml-auto md:ml-0"
           onClick={() => handleNavigation("home")}
         >
-          <img src="/vite-adheera/src/assets/uandi_logo.png" alt="U&I Logo" className="h-[60px]" />
+          <img src="vite-adheera/src/assets/uandi_logo.png" alt="U&I Logo" className="h-[60px]" />
         </div>
 
         {/* Desktop Nav */}
