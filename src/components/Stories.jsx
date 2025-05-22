@@ -22,11 +22,11 @@ function Stories() {
           <h2 className='font-bold text-2xl md:text-4xl '>See how our Volunteers change lives — one story at a time!</h2>
         </div>
 
-        <div className='w-full max-w-[1400px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-[minmax(200px,_auto)] gap-2 px-'>
+        <div className='w-full max-w-[1400px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-[minmax(200px,_auto)] gap-2 py-10'>
           {stories.map((story, index) => (
             <div
               key={index}
-              className={`${story.className} shadow-2xl rounded-xl transform hover:scale-105 transition duration-300 cursor-pointer flex flex-col items-center justify-center p-2`}
+              className={`${story.className} shadow-2xl rounded-xl transform hover:scale-105 transition duration-300 cursor-pointer flex flex-col items-center justify-center py-2`}
               onClick={() => setSelectedStory(story)}
             >
               <img src={story.image} alt="Story" className='w-[120px] md:w-[200px]' />
