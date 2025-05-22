@@ -3,13 +3,22 @@ import arrow from '../assets/arrow.png';
 
 function Celebrations() {
   const videos = [
-    " /vite-adheera/videos/adheera_Eoy.mp4 ",
-    "/vite-adheera/videos/adheera_childrens_day.mp4",
-    "/vite-adheera/videos/IMG_0248.MP4"
-    // Add more videos as needed
+    {
+      src: "/vite-adheera/videos/adheera_Eoy.mp4",
+      title: "End of Year Celebration"
+    },
+    {
+      src: "/vite-adheera/videos/adheera_childrens_day.mp4",
+      title: "Children's Day Event"
+    },
+    {
+      src: "/vite-adheera/videos/IMG_0248.MP4",
+      title: "Fun Activity Highlights"
+    }
   ];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   const goToNextVideo = () => {
     setCurrentVideoIndex((prevIndex) => 
@@ -38,7 +47,11 @@ function Celebrations() {
           />
         </div>
 
-        <div className='w-full h-[50vh] sm:h-[60vh] md:h-full bg-green-500 overflow-hidden relative rounded-lg'>
+        <div 
+          className='w-full h-[50vh] sm:h-[60vh] md:h-full bg-green-500 overflow-hidden relative rounded-lg group'
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <video 
             key={currentVideoIndex}
             controls 
@@ -46,13 +59,23 @@ function Celebrations() {
             muted 
             loop 
             className='w-full h-full object-cover'
-            playsInline // Important for mobile browsers
+            playsInline
           >
-            <source src={videos[currentVideoIndex]} type="video/mp4" />
+            <source src={videos[currentVideoIndex].src} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          
-          {/* Navigation arrows - larger on mobile for better touch targets */}
+
+          {/* YouTube-like Hover Title */}
+          <div
+            className={`absolute top-3 left-3 bg-black bg-opacity-80 text-white text-sm sm:text-base px-4 py-2 rounded transition-opacity duration-300 pointer-events-none ${
+              isHovered ? 'opacity-100' : 'opacity-0'
+            }`}
+            style={{ fontFamily: '"Roboto", sans-serif', fontWeight: 500 }}
+          >
+            {videos[currentVideoIndex].title}
+          </div>
+
+          {/* Navigation Buttons */}
           <button 
             onClick={goToPrevVideo}
             className='absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 md:p-2 rounded-full hover:bg-opacity-75 transition'
@@ -73,7 +96,7 @@ function Celebrations() {
             </svg>
           </button>
 
-          {/* Video counter indicator */}
+          {/* Video Counter */}
           <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 text-white px-3 py-1 rounded-full text-sm'>
             {currentVideoIndex + 1} / {videos.length}
           </div>

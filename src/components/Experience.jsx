@@ -8,9 +8,10 @@ const ExperiencesSection = () => {
   );
   const [selectedExperience, setSelectedExperience] = useState(null);
   const [allExperiences, setAllExperiences] = useState([]);
+  const [randomExperiences, setRandomExperiences] = useState([]);
   const [showAll, setShowAll] = useState(false); // toggle for extra cards
   const modalRef = useRef(null);
-
+  
   useEffect(() => {
     const updateHeading = () => {
       setHeading(
@@ -27,6 +28,11 @@ const ExperiencesSection = () => {
 
   useEffect(() => {
     setAllExperiences(experiences);
+  }, []);
+
+  useEffect(() => {
+    const shuffled = [...experiences].sort(() => 0.5 - Math.random());
+    setRandomExperiences(shuffled.slice(0, 38));
   }, []);
 
   useEffect(() => {
@@ -77,7 +83,7 @@ const ExperiencesSection = () => {
                   <h6>
                     {exp.name}, {exp.age}
                   </h6>
-                  <p className="text-gray-600 font-medium text-right">{exp.year}</p>
+                  <p className="text-gray-600 font-normal text-right">{exp.year}</p>
                 </div>
                 <p className="leading-snug max-h-full overflow-hidden text-ellipsis italic text-xl">
                   "{truncateText(exp.experience, 150)}"

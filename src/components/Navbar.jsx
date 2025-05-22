@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "/vite-adheera/src/assets/uandi_logo.png"
+import Adheera from "/vite-adheera/src/assets/Adheera_logo.png"
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -33,10 +34,12 @@ const Navbar = () => {
 
         {/* Logo (right) */}
         <div
-          className="flex items-center gap-2 cursor-pointer ml-auto md:ml-0"
+          className="flex items-center justify-center w-[15%]"
           onClick={() => handleNavigation("home")}
         >
           <img src={logo} alt="U&I Logo" className="h-[60px]" />
+          <p className="text-yellow-300 font-bold ">X</p>
+          <img src={Adheera} alt="Adheera Logo" className="h-[150px] p-0" />
         </div>
 
         {/* Desktop Nav */}
