@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Marquee from "react-fast-marquee";
-import images from "d:/vite-adheera/src/components/data/Events";
+import images from "./data/Events";
 
 const EventsCarousol = () => {
   const [selectedImage, setSelectedImage] = useState(null);
