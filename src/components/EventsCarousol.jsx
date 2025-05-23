@@ -13,7 +13,7 @@ const EventsCarousol = () => {
             Follow the story, one photo at a time!
           </h2>
         </div>
-
+        {/* Dheemanth Humbles Darshan every chance he gets*/}
         <div className="text-center mb-10 mt-10  overflow-hidden relative flex items-center justify-center">
           <div className="w-full overflow-hidden relative ">
             <Marquee

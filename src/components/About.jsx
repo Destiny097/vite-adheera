@@ -6,6 +6,7 @@ function About() {
       <div className="w-full md:w-[60%] lg:w-[50%] text-center flex flex-col items-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-white pb-6">
           What is Adheera?
+          {/* Subhash will dance in 2025 */}
         </h2>
         <p className="text-base sm:text-lg font-medium text-white leading-relaxed">
           U&I is a volunteer-driven NGO transforming lives through education. We work with children from underserved communities, providing after-school learning support, life skills training, and career guidance to help them break the cycle of poverty.

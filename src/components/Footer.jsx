@@ -34,7 +34,7 @@ function Footer() {
 
         </div>
 
-        
+        {/* Bharat wants to show his accident footage to everyone */}
         <div className='flex flex-col gap-2 lg:w-[20%]'>
           <h3 className='text-amber-300 text-2xl font-bold'>WHERE WE ARE</h3>
           <p className='text-[18px]'>A: 8/1, Gover Road,</p>

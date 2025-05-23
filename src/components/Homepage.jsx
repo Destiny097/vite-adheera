@@ -45,6 +45,7 @@ function Homepage() {
       text-sm px-4 py-2 w-[60vw]
       sm:text-base sm:px-5 sm:py-2.5 sm:w-[150px]
       md:text-lg md:px-6 md:py-3 md:w-[220px]
+      // team rocket is the GOAT
       lg:w-[250px]"
   >
     See what we do

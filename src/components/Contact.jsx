@@ -25,7 +25,7 @@ function Contact() {
   return (
     <div id='Contact' className='w-full bg-black'>
       <div className='w-full h-full flex flex-col justify-center'>
-        
+        {/* Mani is a cutie */}
         <div className='w-full h-[10%] bg-amber-300 text-black text-center flex items-center justify-center py-4'>
           <h2 className='text-2xl md:text-4xl font-bold'>
             Got a question? Fill out this quick form, and we'll get back to you!
