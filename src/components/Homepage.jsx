@@ -10,9 +10,10 @@ import img3 from '../assets/img3.png';
 import img4 from '../assets/img4.png';
 import img5 from '../assets/img5.png';
 import { Link } from 'react-scroll';
+
 function Homepage() {
   return (
-    <div id='Home' className='w-[100%] pt-20 h-[50vh] md:h-[80vh] overflow-x-hidden relative'>
+    <div id='Home' className='w-full pt-20 h-[50vh] md:h-[80vh] overflow-hidden relative'>
       <Swiper
         modules={[Autoplay]}
         spaceBetween={0}
@@ -20,9 +21,9 @@ function Homepage() {
         autoplay={{ delay: 3000 }}
         loop={true}
         speed={1500}
-        className='w-full h-full '
+        className='w-full h-full'
       >
-        {[img1, img2, img3, img4 , img5].map((img, index) => (
+        {[img1, img2, img3, img4, img5].map((img, index) => (
           <SwiperSlide key={index}>
             <img
               src={img}
@@ -32,17 +33,24 @@ function Homepage() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="absolute bottom-[10%] left-1/2 transform -translate-x-1/2 z-10">
+
+      {/* Bottom-centered Button */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2  z-10">
   <Link
     to="Events"
     smooth={true}
     duration={500}
     offset={-100}
-    className="cursor-pointer no-underline text-black font-bold transition-colors duration-300 px-4 py-3 w-[20vw] min-w-max flex justify-center bg-[#ffda1b] rounded-xl hover:bg-[#d8b400]"
+    className="cursor-pointer text-black font-bold bg-[#ffda1b] rounded-xl text-center hover:bg-[#d8b400] transition-all duration-300 
+      text-sm px-4 py-2 w-[60vw]
+      sm:text-base sm:px-5 sm:py-2.5 sm:w-[150px]
+      md:text-lg md:px-6 md:py-3 md:w-[220px]
+      lg:w-[250px]"
   >
-    <p>See what we do</p>
+    See what we do
   </Link>
 </div>
+
     </div>
   );
 }

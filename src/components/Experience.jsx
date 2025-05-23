@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import experiences from "./data/experience.json";
 
 const ExperiencesSection = () => {
@@ -8,10 +7,11 @@ const ExperiencesSection = () => {
   );
   const [selectedExperience, setSelectedExperience] = useState(null);
   const [allExperiences, setAllExperiences] = useState([]);
-  const [randomExperiences, setRandomExperiences] = useState([]);
-  const [showAll, setShowAll] = useState(false); // toggle for extra cards
+  const [showAll, setShowAll] = useState(false);
+  const [tick, setTick] = useState(0);
   const modalRef = useRef(null);
-  
+
+  // Responsive heading
   useEffect(() => {
     const updateHeading = () => {
       setHeading(
@@ -20,28 +20,32 @@ const ExperiencesSection = () => {
           : "Ready to explore? Hear from the Teachers themselves!"
       );
     };
-
     updateHeading();
     window.addEventListener("resize", updateHeading);
     return () => window.removeEventListener("resize", updateHeading);
   }, []);
 
-  useEffect(() => {
-    setAllExperiences(experiences);
+  // Shuffle logic (stable reference)
+  const shuffleArray = useCallback(() => {
+    const shuffled = [...experiences].sort(() => Math.random() - 0.5);
+    setAllExperiences(shuffled);
+    setTick((prev) => prev + 1); // force re-render
   }, []);
 
+  // Initial shuffle + interval shuffle
   useEffect(() => {
-    const shuffled = [...experiences].sort(() => 0.5 - Math.random());
-    setRandomExperiences(shuffled.slice(0, 38));
-  }, []);
+    shuffleArray(); // initial
+    const interval = setInterval(shuffleArray, 10000); // every 10s
+    return () => clearInterval(interval);
+  }, [shuffleArray]);
 
+  // Modal click outside handler
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
         setSelectedExperience(null);
       }
     };
-
     if (selectedExperience) {
       document.addEventListener("mousedown", handleClickOutside);
     }
@@ -51,13 +55,15 @@ const ExperiencesSection = () => {
   const truncateText = (text, charLimit) =>
     text.length > charLimit ? text.substring(0, charLimit) + "..." : text;
 
-  // Show only first 4 or all based on toggle
   const visibleExperiences = showAll
     ? allExperiences
     : allExperiences.slice(0, 4);
 
   return (
-    <section id="Experience" className="text-center pb-8 bg-[#2d2d2d]  flex flex-col justify-center">
+    <section
+      id="Experience"
+      className="text-center pb-8 bg-[#2d2d2d] flex flex-col justify-center"
+    >
       <div>
         <div className="flex justify-center items-center flex-wrap mb-8 bg-[#ff3b6d] w-full p-4 mt-0">
           <h4 className="font-bold text-black text-center break-words max-w-[90%] text-4xl">
@@ -65,7 +71,10 @@ const ExperiencesSection = () => {
           </h4>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-8 w-full max-w-[1200px] mx-auto auto-rows-fr px-5">
+        <div
+          key={tick}
+          className="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-8 w-full max-w-[1200px] mx-auto auto-rows-fr px-5 transition-all duration-500"
+        >
           {visibleExperiences.map((exp, index) => (
             <div
               key={index}
@@ -83,7 +92,9 @@ const ExperiencesSection = () => {
                   <h6>
                     {exp.name}, {exp.age}
                   </h6>
-                  <p className="text-gray-600 font-normal text-right">{exp.year}</p>
+                  <p className="text-gray-600 font-normal text-right">
+                    {exp.year}
+                  </p>
                 </div>
                 <p className="leading-snug max-h-full overflow-hidden text-ellipsis italic text-xl">
                   "{truncateText(exp.experience, 150)}"
@@ -96,8 +107,7 @@ const ExperiencesSection = () => {
           ))}
         </div>
 
-        {/* Toggle Button */}
-        {allExperiences.length > 4 && (
+        {experiences.length > 4 && (
           <div className="mt-10 flex justify-center items-center">
             <button
               onClick={() => setShowAll(!showAll)}
