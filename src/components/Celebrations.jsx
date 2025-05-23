@@ -8,11 +8,11 @@ function Celebrations() {
       title: "End of Year Celebration"
     },
     {
-      src: "/vite-adheera/videos/adheera_childrens_day.mp4",
+      src: "/videos/adheera_childrens_day.mp4",
       title: "Children's Day Event"
     },
     {
-      src: "/vite-adheera/videos/IMG_0248.MP4",
+      src: "/videos/IMG_0248.MP4",
       title: "Fun Activity Highlights"
     }
   ];
