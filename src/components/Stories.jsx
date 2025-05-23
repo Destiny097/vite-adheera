@@ -15,14 +15,14 @@ function Stories() {
   ];
 
   return (
-    <div id='Stories' className='w-full h-fit bg-black flex flex-col items-center justify-center px-2 py-4'>
+    <div id='Stories' className='w-full h-fit bg-black flex flex-col items-center justify-center'>
       <div className='w-full h-full flex flex-col items-center justify-between'>
 
         <div className='w-full bg-[#ff3b6d] text-center flex items-center justify-center py-4 px-4'>
           <h2 className='font-bold text-2xl md:text-4xl '>See how our Volunteers change lives — one story at a time!</h2>
         </div>
 
-        <div className='w-full max-w-[1400px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-[minmax(200px,_auto)] gap-2 py-10'>
+        <div className='w-full max-w-[1400px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-[minmax(200px,_auto)] gap-2 py-10 px-2'>
           {stories.map((story, index) => (
             <div
               key={index}

@@ -22,25 +22,30 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50 h-20 flex items-center">
-      <div className="max-w-screen-xl mx-auto flex justify-between items-center w-full px-4">
+      <div className="max-w-screen-xl mx-auto flex justify-between items-center w-full pl-2 md:p-0">
         
         {/* Hamburger (left) */}
         <div
           className="md:hidden cursor-pointer"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          {isMobileMenuOpen ? <FaTimes size={24} className="text-yellow-400" /> : <FaBars size={24} className="text-yellow-400" />}
         </div>
 
         {/* Logo (right) */}
         <div
-          className="flex items-center justify-center w-[15%]"
-          onClick={() => handleNavigation("home")}
-        >
-          <img src={logo} alt="U&I Logo" className="h-[60px]" />
-          <p className="text-yellow-300 font-bold ">X</p>
-          <img src={Adheera} alt="Adheera Logo" className="h-[150px] p-0" />
-        </div>
+  className="flex items-center gap-2 cursor-pointer"
+  onClick={() => handleNavigation("home")}
+>
+  <img src={logo} className="h-15 w-auto" alt="U&I Logo" />
+  <div className="text-xl font-bold text-yellow-400">x</div>
+  <img
+    id="LakshyaLogo"
+    src={Adheera}
+    className="h-15 w-auto"
+    alt="Lakshya Logo"
+  />
+</div>
 
         {/* Desktop Nav */}
         <ul className={`hidden md:flex gap-6 font-medium`}>

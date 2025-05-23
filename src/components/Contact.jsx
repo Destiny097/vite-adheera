@@ -23,7 +23,7 @@ function Contact() {
         );
       };
   return (
-    <div id='Contact' className='w-full min-h-screen bg-black'>
+    <div id='Contact' className='w-full bg-black'>
       <div className='w-full h-full flex flex-col justify-center'>
         
         <div className='w-full h-[10%] bg-amber-300 text-black text-center flex items-center justify-center py-4'>
