@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import logo from "/vite-adheera/src/assets/uandi_logo.png"
-import Adheera from "/vite-adheera/src/assets/Adheera_logo.png"
+import logo from "../assets/uandi_logo.png"
+import Adheera from '../assets/Adheera_logo.png';
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

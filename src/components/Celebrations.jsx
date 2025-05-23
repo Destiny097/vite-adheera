@@ -4,7 +4,7 @@ import arrow from '../assets/arrow.png';
 function Celebrations() {
   const videos = [
     {
-      src: "/vite-adheera/videos/adheera_Eoy.mp4",
+      src: "/videos/adheera_Eoy.mp4",
       title: "End of Year Celebration"
     },
     {
